@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Profil</title>
+    <link rel="stylesheet" href="td-html-css.css">
+</head>
+<body>
+    <header>
+        <h1>Hicham Drief</h1>
+    </header>
+    
+    <section>
+        <h2>En ce qui me concerne</h2>
+        <p> Actuellement étudiant en informatique à l'EMSI.</p>
+        <img src="votre_image.jpg" alt="Une image de moi" style="width:200px;height:auto;">
+    </section>
+    
+    <section>
+        <h2>Hobbies et Objectifs</h2>
+        <ul>
+            <li>Voyages</li>
+            <li>Séries </li>
+            <li>Musique</li>
+        </ul>
+        <ol>
+            <li>Apprendre à codes en JavaScript</li>
+            <li>Apprendre une nouvelle chose</li>
+            <li>Passer un examen de certification</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Tableau d'Amis</h2>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Âge</th>
+                <th>Ville</th>
+                <th>Profil</th>
+            </tr>
+            <tr>
+                <td>Mehdi</td>
+                <td>20</td>
+                <td>El jadida</td>
+                <td><a href="lien_profil_ami1.html">Profil</a></td>
+            </tr>
+            <tr>
+                <td>Amie 2</td>
+                <td>24</td>
+                <td>Lyon</td>
+                <td><a href="lien_profil_ami2.html">Profil</a></td>
+            </tr>
+            <tr>
+                <td>Amie 3</td>
+                <td>26</td>
+                <td>Marseille</td>
+                <td><a href="lien_profil_ami3.html">Profil</a></td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <form id="contactForm">
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <script >
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêche l'envoi par défaut
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+
+    if (name === "") {
+        alert("Le nom ne peut pas être vide.");
+    } else if (!validateEmail(email)) {
+        alert("Veuillez entrer un email valide.");
+    } else {
+        alert("Formulaire soumis avec succès !");
+        // Ici, tu peux ajouter du code pour envoyer le formulaire
+    }
+});
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
+    </script>
+   
+</body>
+
+</html>
+      
